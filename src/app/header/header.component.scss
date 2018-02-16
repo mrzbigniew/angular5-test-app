@@ -1,0 +1,17 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.header {
+    background-color: royalblue;
+    display: flex;
+    max-height: 50px;
+}
