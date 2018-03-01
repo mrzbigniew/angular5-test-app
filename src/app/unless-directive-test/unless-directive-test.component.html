@@ -1,0 +1,15 @@
+<div class="d-flex flex-column w-100">
+  <div class="d-block w-100">
+    <div class="btn btn-primary btn-large" (click)="changeActive($event)">
+      change
+    </div>
+  </div>
+  <div class="d-block w-100">
+    <p *appUnless="isActive">
+      false
+    </p>
+    <p *appUnless="!isActive">
+      true
+    </p>
+  </div>
+</div>

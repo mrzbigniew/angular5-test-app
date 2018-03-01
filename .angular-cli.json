@@ -5,13 +5,19 @@
   },
   "apps": [
     {
+      "name": "app",
       "root": "src",
       "outDir": "dist",
       "assets": [
         "assets",
         "favicon.ico",
-        {"glob" : "**/*", "input": "../node_modules/font-awesome/fonts/", "output": "./fonts/"}
-      ],  
+        {
+          "glob": "**/*",
+          "input": "../node_modules/font-awesome/fonts/",
+          "output": "./fonts/",
+          "allowOutsideOutDir": true
+        }
+      ],
       "index": "index.html",
       "main": "main.ts",
       "polyfills": "polyfills.ts",

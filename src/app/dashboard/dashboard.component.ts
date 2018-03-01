@@ -10,23 +10,13 @@ import 'rxjs/add/operator/map';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  someValue: number = null;
+  name = '';
+  fontSize1 = 10;
+  fontSize2 = 10;
+  fontSize3 = 10;
 
   constructor() { }
 
   ngOnInit() {
-    this.getValue().subscribe((value) => {
-      this.someValue = 1;
-    });
-  }
-
-  getValue(): Observable<number> {
-    return Observable.of<number>(this.someValue);
-  }
-
-  onClick($event) {
-    setTimeout(() => {
-      this.someValue = 2;
-    });
   }
 }

@@ -1,0 +1,10 @@
+<div class="heroes-list">
+  <header>
+    <h2>Heroes list</h2>
+  </header>
+  <div class="hero-list d-fled flex-row">
+    <div class="hero-details d-block" *ngFor="let hero of heroList" (click)="selectHero(hero)">
+      <span>{{hero.name}}</span> <span class="badge badge-primary">{{hero.power}}</span>
+    </div>
+  </div>
+</div>
