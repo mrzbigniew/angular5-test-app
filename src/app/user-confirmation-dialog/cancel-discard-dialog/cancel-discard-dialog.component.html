@@ -1,0 +1,17 @@
+<div class="cancel-discard-message">
+  <div class="modal-header">
+    <h4>
+      <b>Unsaved changes detected!</b>
+    </h4>
+  </div>
+  <div class="modal-body">
+    <div>
+      <b>There are unsaved changes in the active module.</b>
+    </div>
+    <div>Do you want to discard them?</div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-light" (click)="cancel()">Close</button>
+    <button class="btn btn-danger" (click)="discard()">Discard changes</button>
+  </div>
+</div>
