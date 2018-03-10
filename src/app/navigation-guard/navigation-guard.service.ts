@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { CanDeactivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/observable/of';
 
 import { GuardRegistrationParams } from './guard-registration-params';
 import { UserConfirmationDialogService } from '../user-confirmation-dialog/service/user-confirmation-dialog.service';
-import { Subject } from 'rxjs/Subject';
 import { UserConfirmationResult } from '../user-confirmation-dialog/models/user-confirmation-result.enum';
 
 @Injectable()
