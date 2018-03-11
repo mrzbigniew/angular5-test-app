@@ -1,0 +1,5 @@
+<div *ngIf="alert" class="detached-toast-message" [@messageState]="messageState">
+  <ngb-alert [type]="alert.type" [dismissible]="alert.dismissible" (close)="close()">
+    {{alert.message}}
+  </ngb-alert>
+</div>

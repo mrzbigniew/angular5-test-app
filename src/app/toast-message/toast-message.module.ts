@@ -1,27 +1,46 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
-import { ToastMessageComponent } from './toast-message/toast-message.component';
-import { StaticToastMessageComponent } from './static-toast-message/static-toast-message.component';
-import { OutletToastMessageComponent } from './outlet-toast-message/outlet-toast-message.component';
+import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { ToastMessageOutletComponent } from './toast-message-outlet/toast-message-outlet.component';
+import { ToastMessageOutletService } from './service/toast-message-outlet.service';
+import { DetachedToastMessageComponent } from './detached-toast-message/detached-toast-message.component';
+import { DetachedToastMessageService } from './service/detached-toast-message.service';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    NgbAlertModule.forRoot(),
+    BrowserModule,
+    BrowserAnimationsModule
   ],
   declarations: [
-    ToastMessageComponent,
-    StaticToastMessageComponent,
-    OutletToastMessageComponent
+    ToastMessageOutletComponent,
+    DetachedToastMessageComponent
   ],
   exports: [
-    StaticToastMessageComponent,
-    OutletToastMessageComponent
+    ToastMessageOutletComponent,
+    DetachedToastMessageComponent
+  ],
+  providers: [
+    ToastMessageOutletService,
+    DetachedToastMessageService
   ],
   entryComponents: [
-    ToastMessageComponent,
-    StaticToastMessageComponent,
-    OutletToastMessageComponent
-  ],
-  providers: []
+    ToastMessageOutletComponent,
+    DetachedToastMessageComponent
+  ]
 })
-export class ToastMessageModule { }
+export class ToastMessageModule {
+  static forRot(): ModuleWithProviders {
+    return {
+      ngModule: ToastMessageModule,
+      providers: [
+        ToastMessageOutletService,
+        DetachedToastMessageService
+      ]
+    }
+  }
+}

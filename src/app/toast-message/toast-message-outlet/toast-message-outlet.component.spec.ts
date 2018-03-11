@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OutletToastMessageComponent } from './outlet-toast-message.component';
+import { ToastMessageOutletComponent } from './toast-message-outlet.component';
 
-describe('OutletToastMessageComponent', () => {
-  let component: OutletToastMessageComponent;
-  let fixture: ComponentFixture<OutletToastMessageComponent>;
+describe('ToastMessageOutletComponent', () => {
+  let component: ToastMessageOutletComponent;
+  let fixture: ComponentFixture<ToastMessageOutletComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OutletToastMessageComponent ]
+      declarations: [ ToastMessageOutletComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OutletToastMessageComponent);
+    fixture = TestBed.createComponent(ToastMessageOutletComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

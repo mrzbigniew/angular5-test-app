@@ -1,0 +1,7 @@
+<div class="toast-message-outlet">
+  <div *ngFor="let alert of alerts">
+    <ngb-alert [type]="alert.type" [dismissible]="alert.dismissible" (close)="close(alert)">
+      {{alert.message}}
+    </ngb-alert>
+  </div>
+</div>
