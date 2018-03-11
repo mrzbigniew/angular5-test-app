@@ -1,0 +1,27 @@
+<div class="card">
+  <div class="card-header">
+    Toast message uic-detached-toast-message
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col">
+        <div class="p-4">
+          Outlet toast message:
+          <button class="btn btn-danger" (click)="toastOutletError()">Error</button>
+          <button class="btn btn-primary" (click)="toastOutletInfo()">Info</button>
+          <button class="btn btn-success" (click)="toastOutletSuccess()">Success</button>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="p-4">
+          Detached toast message:
+          <button class="btn btn-danger" (click)="detachedOutletError()">Error</button>
+          <button class="btn btn-primary" (click)="detachedOutletInfo()">Info</button>
+          <button class="btn btn-success" (click)="detachedOutletSuccess()">Success</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
