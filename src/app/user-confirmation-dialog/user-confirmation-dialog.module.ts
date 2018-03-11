@@ -5,11 +5,12 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { CancelDiscardDialogComponent } from './cancel-discard-dialog/cancel-discard-dialog.component';
 import { CancelDiscardSaveDialogComponent } from './cancel-discard-save-dialog/cancel-discard-save-dialog.component';
 import { UserConfirmationDialogService } from './service/user-confirmation-dialog.service';
+import { ModuleWithProviders } from '@angular/compiler/src/core';
 
 @NgModule({
   imports: [
     CommonModule,
-    NgbModalModule
+    NgbModalModule.forRoot()
   ],
   declarations: [
     CancelDiscardDialogComponent,
@@ -27,4 +28,13 @@ import { UserConfirmationDialogService } from './service/user-confirmation-dialo
     CancelDiscardSaveDialogComponent
   ]
 })
-export class UserConfirmationDialogModule { }
+export class UserConfirmationDialogModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: UserConfirmationDialogModule,
+      providers: [
+        UserConfirmationDialogService
+      ]
+    };
+  }
+}

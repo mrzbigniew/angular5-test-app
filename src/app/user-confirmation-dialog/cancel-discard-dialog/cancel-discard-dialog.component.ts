@@ -4,7 +4,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { UserConfirmationResult } from '../models/user-confirmation-result.enum';
 
 @Component({
-  selector: 'app-cancel-discard-dialog',
+  selector: 'uic-cancel-discard-dialog',
   templateUrl: './cancel-discard-dialog.component.html',
   styleUrls: ['./cancel-discard-dialog.component.scss']
 })
