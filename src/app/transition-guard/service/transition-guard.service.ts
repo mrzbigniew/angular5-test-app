@@ -6,8 +6,8 @@ import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/observable/of';
 
 import { GuardRegistrationParams } from '../models/guard-registration-params';
-import { UserConfirmationDialogService } from '../../user-confirmation-dialog/service/user-confirmation-dialog.service';
-import { UserConfirmationResult } from '../../user-confirmation-dialog/models/user-confirmation-result.enum';
+import { UserConfirmationDialogService } from '../../dialogs/service/user-confirmation-dialog.service';
+import { UserConfirmationResult } from '../../dialogs/models/user-confirmation-result.enum';
 import { DetachedToastMessageService } from '../../toast-message/service/detached-toast-message.service';
 import { ToastMessageOutletService } from '../../toast-message/service/toast-message-outlet.service';
 

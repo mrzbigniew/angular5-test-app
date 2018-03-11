@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 
 import { TransitionGuardModule } from './transition-guard/transition-guard.module';
-import { UserConfirmationDialogModule } from './user-confirmation-dialog/user-confirmation-dialog.module';
+import { DialogsModule } from './dialogs/dialogs.module';
 import { ToastMessageModule } from './toast-message/toast-message.module';
 import { HeaderModule } from './header/header.module';
 
@@ -27,7 +27,7 @@ import { ToastMessageDemoComponent } from './toast-message-demo/toast-message-de
     BrowserAnimationsModule,
     HeaderModule,
     TransitionGuardModule,
-    UserConfirmationDialogModule,
+    DialogsModule,
     ToastMessageModule
   ],
   providers: [],
