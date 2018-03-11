@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanDeactivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { Router, RouterEvent, NavigationEnd, CanDeactivate } from '@angular/router';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
@@ -24,8 +24,15 @@ export class TransitionGuardService implements CanDeactivate<any> {
   constructor(
     private userConfirmationDialogService: UserConfirmationDialogService,
     private detachedToastMessageService: DetachedToastMessageService,
-    private toastMessageOutlet: ToastMessageOutletService
-  ) { }
+    private toastMessageOutlet: ToastMessageOutletService,
+    private router: Router
+  ) {
+    this.router.events.subscribe((event: RouterEvent) => {
+      if (event instanceof NavigationEnd) {
+        this.clearParams();
+      }
+    });
+  }
 
   private clearParams() {
     this.unsubscribe();
@@ -53,7 +60,6 @@ export class TransitionGuardService implements CanDeactivate<any> {
     saveResult.subscribe((result: boolean) => {
       if (result) {
         this.displaySaveSuccessMessage();
-        this.clearParams();
       } else {
         this.displaySaveFailMessage();
       }
@@ -76,7 +82,6 @@ export class TransitionGuardService implements CanDeactivate<any> {
     }
     result.subscribe(() => {
       this.displayDiscardChangesMessage();
-      this.clearParams();
     });
     return result;
   }
