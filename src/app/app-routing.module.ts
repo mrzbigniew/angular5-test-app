@@ -1,13 +1,13 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 
-import { HeaderModule } from './header/header.module';
+import {HeaderModule} from './header/header.module';
 
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { ToastMessageDemoComponent } from './toast-message-demo/toast-message-demo.component';
-import { TransitionGuardDemoComponent } from './transition-guard-demo/transition-guard-demo.component';
-import { TransitionGuardService } from './transition-guard/service/transition-guard.service';
-
+import {DashboardComponent} from './dashboard/dashboard.component';
+import {ToastMessageDemoComponent} from './toast-message-demo/toast-message-demo.component';
+import {TransitionGuardDemoComponent} from './transition-guard-demo/transition-guard-demo.component';
+import {TransitionGuardService} from './transition-guard/service/transition-guard.service';
+import {CheckboxTestComponent} from './checkbox-test/checkbox-test.component';
 
 const routes: Routes = [
   {
@@ -23,9 +23,10 @@ const routes: Routes = [
   }, {
     path: 'transition-guard-demo',
     component: TransitionGuardDemoComponent,
-    canDeactivate: [
-      TransitionGuardService
-    ]
+    canDeactivate: [TransitionGuardService]
+  }, {
+    path: 'checkbox-test',
+    component: CheckboxTestComponent
   }, {
     path: '**',
     component: DashboardComponent
@@ -36,4 +37,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

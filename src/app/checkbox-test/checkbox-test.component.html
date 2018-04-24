@@ -1,0 +1,13 @@
+<div class="form-group" *ngFor="let item of items; index as itemId; trackBy: trackByFn">
+  <input type="radio" class="form-check-input"
+         [value]="item.value" 
+         name="testCheckbox"
+         id="check_{{itemId}}"
+         (change)="selectedItem=$event.target.value"
+         [checked]="selectedItem===item.value"
+         />
+  <label for="check_{{itemId}}" class="form-check-label">{{item.label}}</label>
+</div>
+<div>
+  {{selectedItem}}
+</div>
